@@ -1,0 +1,253 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.NavBar {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    position: relative;
+}
+
+.bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    flex-wrap: wrap; /* Allows the navbar items to wrap on smaller screens */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    flex: 1; /* Takes up available space */
+    max-width: 300px; /* Limits the width on larger screens */
+    margin: 0 1rem; /* Adds horizontal spacing */
+}
+
+.search input {
+    height: 2rem;
+    padding: 0 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    width: 100%; /* Takes up full width of the container */
+}
+
+.search button {
+    height: 2rem;
+    width: 2rem;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search button i {
+    font-size: 1rem;
+}
+
+.link {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+    gap: 1.5rem; /* Adds spacing between links */
+}
+
+.link li {
+    margin: 0;
+}
+
+.link li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+}
+
+.link li a:hover {
+    color: #007BFF;
+}
+
+.sell {
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sell:hover {
+    background-color: #218838;
+}
+
+.login {
+    background-color: #007BFF;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login a {
+    text-decoration: none;
+    color: white;
+}
+
+.login:hover {
+    background-color: #0056b3;
+}
+
+.user-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-image1 {
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+    width: 40px;
+    height: 40px;
+}
+
+.user-image1:hover {
+    transform: scale(1.1);
+}
+
+.dropdown1 {
+    position: absolute;
+    top: 70px; 
+    right: 20px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    padding: 1rem;
+    display: none; /* Hidden by default */
+}
+
+.dropdown1 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown1 li {
+    padding: 0.5rem 0;
+    cursor: pointer;
+    color: #333;
+}
+
+.dropdown1 li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown1 li:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown1 button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    color: #333;
+}
+
+.dropdown1 button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .search {
+        margin: 0;
+    }
+
+    .link {
+        display: none; /* Hide links */
+        flex-direction: column; /* Stack links vertically when visible */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #ffffff;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .link.active {
+        display: flex; /* Show links when active */
+    }
+
+    .login {
+        display: none; /* Hide login button */
+    }
+
+    .user-container {
+        display: none; /* Hide user container */
+    }
+
+    .dropdown1 {
+        top: 70px; 
+        right: 10px;
+    }
+
+    .bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Media Query for Small Devices */
+@media (max-width: 480px) {
+    .search input {
+        font-size: 0.875rem; /* Smaller font size for input on small screens */
+    }
+
+    .search button {
+        width: 1.5rem; /* Smaller button on small screens */
+        height: 1.5rem;
+    }
+
+    .logo {
+        height: 30px; /* Smaller logo on small screens */
+    }
+
+    .brand-title {
+        font-size: 1.5rem; /* Smaller font size for brand title on small screens */
+    }
+}
+
+.brand-title {
+    font-weight: bold;
+    color: #2d3748; /* Tailwind's text-gray-800 */
+    font-size: 2.25rem; /* Default font size for larger screens */
+}
+
+.highlight {
+    color: #2563eb; /* Tailwind's text-blue-600 */
+}
